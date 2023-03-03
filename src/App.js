@@ -6,7 +6,37 @@ import Filters from "./components/Filters/Filters";
 import Cards from "./components/Cards/Cards";
 import Paginations from "./components/Pagination/Paginations";
 import Search from "./components/Search/Search";
+import Navbar from "./components/Navbar/Navbar";
+import Episodes from "./components/Pages/Episodes";
+import Location from "./components/Pages/Location";
+
+import {
+	BrowserRouter as Router,
+	Routes,
+	Route,
+} from "react-router-dom";
+
 export default function App() {
+	return (
+		<Router>
+			<div className="App">
+				<Navbar></Navbar>
+			</div>
+
+			<Routes>
+				<Route path="/" element={<Home />}></Route>
+				<Route
+					path="/episodes"
+					element={<Episodes />}></Route>
+				<Route
+					path="/location"
+					element={<Location />}></Route>
+			</Routes>
+		</Router>
+	);
+}
+
+function Home() {
 	const [pageNumber, setPageNumber] = useState(1);
 
 	const [fetchedData, updateFetchedData] = useState([]);
