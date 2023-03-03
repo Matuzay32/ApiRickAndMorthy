@@ -1,5 +1,6 @@
 import React from "react";
 import FilterBTN from "../FilterBTN";
+import styles from "../../Filters/Filter.module.scss";
 
 const Speicies = ({ updateSpecies, setPageNumber }) => {
 	let species = [
@@ -16,7 +17,8 @@ const Speicies = ({ updateSpecies, setPageNumber }) => {
 		"Planet",
 	];
 	return (
-		<div className="accordion-item ">
+		<div
+			className={`accordion-item  ${styles.acordionFondo}`}>
 			<h2 className="accordion-header" id="headingTwo">
 				<button
 					className="accordion-button collapsed"

@@ -1,10 +1,11 @@
 import React from "react";
 import FilterBTN from "../FilterBTN";
-
+import styles from "../../Filters/Filter.module.scss";
 const Status = ({ updateStatus, setPageNumber }) => {
 	let status = ["Alive", "Dead", "Unknown"];
 	return (
-		<div className="accordion-item">
+		<div
+			className={`accordion-item  ${styles.acordionFondo}`}>
 			<h2 className="accordion-header" id="headingOne">
 				<button
 					className="accordion-button"

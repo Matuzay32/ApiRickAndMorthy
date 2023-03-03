@@ -30,7 +30,7 @@ export default function Search({
 							e.preventDefault();
 							setSearch(query);
 						}}
-						className="btn btn-outline-success"
+						className="btn btn-success"
 						type="submit">
 						Search
 					</button>

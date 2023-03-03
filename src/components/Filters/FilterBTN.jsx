@@ -35,7 +35,7 @@ const FilterBTN = ({
 						task(input);
 						setPageNumber(1);
 					}}
-					className="btn btn-outline-success"
+					className="btn btn-success"
 					for={`${name}-${index}`}>
 					{input}
 				</label>

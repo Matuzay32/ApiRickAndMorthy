@@ -1,5 +1,6 @@
 import React from "react";
 import FilterBTN from "../FilterBTN";
+import styles from "../../Filters/Filter.module.scss";
 
 const Gender = ({ updateGender, setPageNumber }) => {
 	let genders = [
@@ -9,7 +10,8 @@ const Gender = ({ updateGender, setPageNumber }) => {
 		"unknown",
 	];
 	return (
-		<div className="accordion-item">
+		<div
+			className={`accordion-item  ${styles.acordionFondo}`}>
 			<h2 className="accordion-header" id="headingThree">
 				<button
 					className="accordion-button collapsed"

@@ -2,6 +2,7 @@ import React from "react";
 import Gender from "./Category/Gender";
 import Speicies from "./Category/Speicies";
 import Status from "./Category/Status";
+import styles from "./Filter.module.scss";
 
 const Filter = ({
 	pageNumber,
@@ -25,7 +26,7 @@ const Filter = ({
 			<div
 				style={{ cursor: "pointer" }}
 				onClick={clear}
-				className="text-success text-decoration-underline text-center mb-3">
+				className={`text-success text-decoration-underline text-center mb-3 ${styles.clearFilters}`}>
 				Clear Filters
 			</div>
 			<div className="accordion" id="accordionExample">
