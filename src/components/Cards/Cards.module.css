@@ -1,0 +1,11 @@
+.badge {
+  top: 10px;
+  right: 20px;
+  font-size: 17px;
+  box-shadow: inset 0px 1px 12px;
+}
+
+.card {
+  border: solid #75ef9e 1px;
+  box-shadow: -2px -1px 11px #75ef9e;
+}
