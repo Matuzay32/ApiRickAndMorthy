@@ -63,6 +63,7 @@ function Home() {
 			<Search
 				setPageNumber={setPageNumber}
 				setSearch={setSearch}></Search>
+
 			<div className="container">
 				<div className="row">
 					<Filters

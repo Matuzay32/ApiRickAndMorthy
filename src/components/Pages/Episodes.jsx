@@ -1,14 +1,28 @@
 import React, { useEffect, useState } from "react";
 import InputGroup from "../Filters/Category/InputGroup";
 import Cards from "../Cards/Cards";
+import styles from "../Filters/Filter.module.scss";
 
 const Episodes = () => {
-	let [results, setResults] = React.useState([]);
+	let [results, setResults] = useState([]);
 	let [info, setInfo] = useState([]);
 	let { air_date, episode, name } = info;
 	let [id, setID] = useState(1);
+	const [episodies, setEpisodies] = useState(1);
 
 	let api = `https://rickandmortyapi.com/api/episode/${id}`;
+	const apiE = "https://rickandmortyapi.com/api/episode";
+
+	useEffect(() => {
+		(async () => {
+			const res = await fetch(apiE);
+			const data = await res.json();
+
+			setEpisodies(data?.info?.count);
+		})();
+
+		return () => {};
+	}, [apiE]);
 
 	useEffect(() => {
 		(async function () {
@@ -27,11 +41,13 @@ const Episodes = () => {
 	}, [api]);
 
 	return (
-		<div className="container">
+		<div
+			className="container "
+			style={{ paddingTop: "10rem" }}>
 			<div className="row mb-3">
-				<h1 className="text-center mb-3">
+				<h1 className="text-center  mb-3  p-3">
 					Episode name :{" "}
-					<span className="text-primary">
+					<span className="text-success">
 						{name === "" ? "Unknown" : name}
 					</span>
 				</h1>
@@ -48,7 +64,7 @@ const Episodes = () => {
 					<InputGroup
 						name="Episode"
 						changeID={setID}
-						total={51}
+						total={episodies}
 					/>
 				</div>
 				<div className="col-lg-8 col-12">

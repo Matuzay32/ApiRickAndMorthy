@@ -9,5 +9,6 @@
   border: solid #75ef9e 1px;
   box-shadow: -2px -1px 11px #75ef9e;
   background-color: rgba(255, 245, 245, 0.571);
-  backdrop-filter: blur(4px);
-}
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+}/*# sourceMappingURL=Cards.module.css.map */

@@ -8,13 +8,15 @@ const InputGroup = ({ name, changeID, total }) => {
 				className="form-select"
 				id={name}>
 				<option value="1">Choose...</option>
-				{[...Array(total).keys()].map((x, index) => {
-					return (
-						<option value={x + 1}>
-							{name} - {x + 1}
-						</option>
-					);
-				})}
+				{Array.from({ length: total }).map(
+					(_, index) => {
+						return (
+							<option value={index + 1}>
+								{name} - {index + 1}
+							</option>
+						);
+					}
+				)}
 			</select>
 		</div>
 	);

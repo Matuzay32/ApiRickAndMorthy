@@ -4,7 +4,6 @@
   border: solid #75ef9e 1px;
   box-shadow: -2px -1px 11px #75ef9e;
 }
-
 .input:focus {
   outline: none;
 }
@@ -13,4 +12,4 @@
   display: flex;
   justify-content: center;
   margin-bottom: 2rem;
-}
+}/*# sourceMappingURL=Search.module.css.map */
