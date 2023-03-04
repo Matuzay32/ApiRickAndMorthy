@@ -59,16 +59,7 @@ function Home() {
 	}, [api]);
 
 	return (
-		<div className="App">
-			<h1
-				style={{
-					textShadow:
-						"-2px -1px 11px #75ef9e ,-2px -1px 12px #75ef9e ",
-					color: "white",
-				}}
-				className="text-center my-4 ">
-				Rick and Morty
-			</h1>
+		<div className="App" style={{ paddingTop: "7rem" }}>
 			<Search
 				setPageNumber={setPageNumber}
 				setSearch={setSearch}></Search>
