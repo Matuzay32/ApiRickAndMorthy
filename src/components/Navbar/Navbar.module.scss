@@ -21,3 +21,24 @@
 			0 0 70px #00ff00;
 	}
 }
+
+/* Establece el ancho del scrollbar */
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+/* Establece el color del thumb (parte móvil del scrollbar) */
+::-webkit-scrollbar-thumb {
+	background-color: rgba(0, 0, 0, 0.446);
+	backdrop-filter: blur(4px);
+}
+
+/* Establece el color del track (fondo del scrollbar) */
+::-webkit-scrollbar-track {
+	background-color: #f1f1f1;
+	background-color: rgba(0, 0, 0, 0.446);
+	backdrop-filter: blur(4px);
+	box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00,
+		0 0 30px #00ff00, 0 0 40px #00ff00, 0 0 50px #00ff00,
+		0 0 60px #00ff00, 0 0 70px #00ff00;
+}

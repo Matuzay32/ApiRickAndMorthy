@@ -2,28 +2,19 @@ import React, { useEffect, useState } from "react";
 import InputGroup from "../Filters/Category/InputGroup";
 import Cards from "../Cards/Cards";
 import styles from "../Filters/Filter.module.scss";
+import useFetch from "../../hooks/useFetch";
 
 const Location = () => {
 	let [results, setResults] = useState([]);
 	let [info, setInfo] = useState([]);
 	let { type, dimension, name } = info;
 	let [id, setID] = useState(1);
-	const [episodies, setEpisodies] = useState(1);
+	const [locations, setLocation] = useState(1);
 
 	let api = `https://rickandmortyapi.com/api/location/${id}`;
 	const apiE = "https://rickandmortyapi.com/api/location";
 
-	useEffect(() => {
-		(async () => {
-			const res = await fetch(apiE);
-			const data = await res.json();
-
-			setEpisodies(data?.info?.count);
-		})();
-
-		return () => {};
-	}, [apiE]);
-
+	useFetch(apiE, setLocation);
 	useEffect(() => {
 		(async function () {
 			let data = await fetch(api).then((res) =>
@@ -67,7 +58,7 @@ const Location = () => {
 					<InputGroup
 						name="Location"
 						changeID={setID}
-						total={episodies}
+						total={locations.info?.count}
 					/>
 				</div>
 				<div className="col-lg-8 col-12">

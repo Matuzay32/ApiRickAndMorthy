@@ -6,29 +6,8 @@ export default function Paginations({
 	pageNumber,
 	info,
 }) {
-	// const prev = () => {
-	// 	setPageNumber((s) => (s >= 2 ? s - 1 : s));
-	// };
-	// const next = () => {
-	// 	setPageNumber((s) => (s < info.pages ? s + 1 : s));
-	// };
-
 	return (
 		<>
-			{/* <div className="container d-flex justify-content-center gap-5">
-				<button
-					onClick={prev}
-					type="button"
-					className="btn btn-success">
-					Previous
-				</button>
-				<button
-					onClick={next}
-					type="button"
-					className="btn btn-success">
-					Next
-				</button>
-			</div> */}
 			<ReactPaginate
 				className="pagination justify-content-center my-4 gap-4"
 				nextLabel="Next"

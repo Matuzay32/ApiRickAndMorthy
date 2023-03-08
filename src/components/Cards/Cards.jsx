@@ -1,7 +1,8 @@
 import React from "react";
 import styles from "./Cards.module.scss";
+import { Link } from "react-router-dom";
 
-export default function Cards({ results }) {
+export default function Cards({ results, page }) {
 	return (
 		<>
 			{results
@@ -14,9 +15,13 @@ export default function Cards({ results }) {
 							status,
 						}) => {
 							return (
-								<div
+								<Link
+									style={{
+										textDecoration: "none",
+									}}
+									to={`${page}${id}`}
 									key={id}
-									className="col-4 mb-5">
+									className="col-4 mb-5 text-dark">
 									<div
 										className={`${styles.card} card`}>
 										<img
@@ -54,7 +59,7 @@ export default function Cards({ results }) {
 											)}
 										</div>
 									</div>
-								</div>
+								</Link>
 							);
 						}
 				  )

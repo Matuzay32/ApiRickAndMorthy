@@ -2,10 +2,6 @@ import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap";
 import "./index.css";
-import Filters from "./components/Filters/Filters";
-import Cards from "./components/Cards/Cards";
-import Paginations from "./components/Pagination/Paginations";
-import Search from "./components/Search/Search";
 import Navbar from "./components/Navbar/Navbar";
 import Episodes from "./components/Pages/Episodes";
 import Location from "./components/Pages/Location";
@@ -15,6 +11,8 @@ import {
 	Routes,
 	Route,
 } from "react-router-dom";
+import Home from "./components/Pages/Home";
+import CardDetails from "./components/Cards/CardDetails";
 
 export default function App() {
 	return (
@@ -26,65 +24,25 @@ export default function App() {
 			<Routes>
 				<Route path="/" element={<Home />}></Route>
 				<Route
+					path="/:id"
+					element={<CardDetails />}></Route>
+
+				<Route
 					path="/episodes"
 					element={<Episodes />}></Route>
+
+				<Route
+					path="/episodes/:id"
+					element={<CardDetails />}></Route>
+
 				<Route
 					path="/location"
 					element={<Location />}></Route>
+
+				<Route
+					path="/location/:id"
+					element={<CardDetails />}></Route>
 			</Routes>
 		</Router>
-	);
-}
-
-function Home() {
-	const [pageNumber, setPageNumber] = useState(1);
-
-	const [fetchedData, updateFetchedData] = useState([]);
-	const [search, setSearch] = useState("");
-	const [status, updateStatus] = useState("");
-	const [gender, updateGender] = useState("");
-	const [species, updateSpecies] = useState("");
-
-	let { info, results } = fetchedData;
-
-	const api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}&status=${status}&gender=${gender}&species=${species}`;
-	useEffect(() => {
-		(async () => {
-			const data = await fetch(api);
-			const res = await data.json();
-			updateFetchedData(res);
-		})();
-
-		return () => {};
-	}, [api]);
-
-	return (
-		<div className="App" style={{ paddingTop: "7rem" }}>
-			<Search
-				setPageNumber={setPageNumber}
-				setSearch={setSearch}></Search>
-
-			<div className="container">
-				<div className="row">
-					<Filters
-						pageNumber={pageNumber}
-						status={status}
-						updateStatus={updateStatus}
-						updateGender={updateGender}
-						updateSpecies={updateSpecies}
-						setPageNumber={setPageNumber}></Filters>
-					<div className="col-8">
-						<div className="row">
-							<Cards results={results}></Cards>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<Paginations
-				pageNumber={pageNumber}
-				setPageNumber={setPageNumber}
-				info={info}></Paginations>
-		</div>
 	);
 }

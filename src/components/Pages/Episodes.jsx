@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import InputGroup from "../Filters/Category/InputGroup";
 import Cards from "../Cards/Cards";
 import styles from "../Filters/Filter.module.scss";
+import useFetch from "../../hooks/useFetch";
 
 const Episodes = () => {
 	let [results, setResults] = useState([]);
@@ -23,6 +24,7 @@ const Episodes = () => {
 
 		return () => {};
 	}, [apiE]);
+	useFetch(apiE, setEpisodies);
 
 	useEffect(() => {
 		(async function () {
@@ -64,7 +66,7 @@ const Episodes = () => {
 					<InputGroup
 						name="Episode"
 						changeID={setID}
-						total={episodies}
+						total={episodies.info?.count}
 					/>
 				</div>
 				<div className="col-lg-8 col-12">
