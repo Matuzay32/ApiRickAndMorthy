@@ -6,11 +6,21 @@
 .numeros {
   color: white;
   text-decoration: none;
+  margin: 0;
 }
 
 .active {
-  background-color: rgb(36, 209, 67);
+  background-color: #24d143;
   border: none;
   color: white;
   text-decoration: none;
-}/*# sourceMappingURL=Pagination.module.css.map */
+}
+
+@media (max-width: 768px) {
+  .next {
+    display: none;
+  }
+  .prev {
+    display: none;
+  }
+}

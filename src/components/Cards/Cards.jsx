@@ -21,7 +21,7 @@ export default function Cards({ results, page }) {
 									}}
 									to={`${page}${id}`}
 									key={id}
-									className="col-4 mb-5 text-dark">
+									className="col-lg-4  col-12 mb-5 text-dark">
 									<div
 										className={`${styles.card} card`}>
 										<img

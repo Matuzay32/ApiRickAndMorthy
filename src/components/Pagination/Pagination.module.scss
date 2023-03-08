@@ -2,13 +2,24 @@
 	color: white;
 	text-decoration: none;
 }
+
 .numeros {
 	color: white;
 	text-decoration: none;
+	margin: 0;
 }
 .active {
 	background-color: rgb(36, 209, 67);
 	border: none;
 	color: white;
 	text-decoration: none;
+}
+
+@media (max-width: 768px) {
+	.next {
+		display: none;
+	}
+	.prev {
+		display: none;
+	}
 }

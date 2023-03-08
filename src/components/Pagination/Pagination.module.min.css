@@ -1,1 +1,1 @@
-.color a{color:white;text-decoration:none}.numeros{color:white;text-decoration:none}.active{background-color:#24d143;border:none;color:white;text-decoration:none}
+.color a{color:white;text-decoration:none}.numeros{color:white;text-decoration:none;margin:0}.active{background-color:#24d143;border:none;color:white;text-decoration:none}@media (max-width: 768px){.next{display:none}.prev{display:none}}

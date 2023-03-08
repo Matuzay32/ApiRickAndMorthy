@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import ReactPaginate from "react-paginate";
 import styles from "./Pagination.module.scss";
 export default function Paginations({
@@ -6,6 +6,18 @@ export default function Paginations({
 	pageNumber,
 	info,
 }) {
+	const [width, setWidth] = useState(window.innerWidth);
+	const updateDimensions = () => {
+		setWidth(window.innerWidth);
+	};
+	useEffect(() => {
+		window.addEventListener("resize", updateDimensions);
+		return () =>
+			window.removeEventListener(
+				"resize",
+				updateDimensions
+			);
+	}, []);
 	return (
 		<>
 			<ReactPaginate
@@ -14,9 +26,11 @@ export default function Paginations({
 				forcePage={
 					pageNumber === 1 ? 0 : pageNumber - 1
 				}
+				marginPagesDisplayed={2}
+				pageRangeDisplayed={2}
 				previousLabel="Prev"
-				previousClassName={` btn btn-success fs-5 ${styles.color}`}
-				nextClassName={` btn btn-success fs-5 ${styles.color}`}
+				previousClassName={`${styles.prev} btn btn-success fs-5 prev ${styles.color}`}
+				nextClassName={`btn btn-success fs-5 ${styles.color} ${styles.next}`}
 				activeClassName="active"
 				pageCount={info?.pages}
 				pageClassName={`btn btn-success${styles.numeros}`}

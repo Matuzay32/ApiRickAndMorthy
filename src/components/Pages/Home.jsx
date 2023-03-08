@@ -32,7 +32,7 @@ export default function Home() {
 						updateGender={updateGender}
 						updateSpecies={updateSpecies}
 						setPageNumber={setPageNumber}></Filters>
-					<div className="col-8">
+					<div className="col-lg-8 col-12">
 						<div className="row">
 							{loading && (
 								<div>
